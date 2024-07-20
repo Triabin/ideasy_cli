@@ -22,6 +22,11 @@ npm run unit
 
 # run all tests
 npm test
-```
 
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+# 依赖
+npm install less
+npm install vue-router
+npm install element-plus
+npm install @element-plus/icons-vue
+# npm install -D unplugin-vue-components unplugin-auto-import
+```

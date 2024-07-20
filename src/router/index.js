@@ -1,15 +1,17 @@
-import Vue from 'vue'
-import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
+import { createRouter, createWebHashHistory } from 'vue-router';
 
-Vue.use(Router)
-
-export default new Router({
-  routes: [
+// 制定路由规则
+const routes = [
     {
-      path: '/',
-      name: 'HelloWorld',
-      component: HelloWorld
+        path: '/',
+        name: 'Home',
+        component: () => import('@/views/Home.vue')
     }
-  ]
-})
+];
+
+const routers = createRouter({
+    history: createWebHashHistory(), // 设置路由模式
+    routes
+});
+
+export default routers;
