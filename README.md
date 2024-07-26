@@ -1,6 +1,7 @@
 # ideasy_cli
 
-> 灵光一现
+> **灵光**IDEASY
+> 捕捉生命中的每一丝灵感，尽一切努力留下它，康庄之道，自在其中！
 
 ## Build Setup
 
@@ -8,7 +9,7 @@
 # install dependencies
 npm install
 
-# serve with hot reload at localhost:8080
+# serve with hot reload at localhost:3000
 npm run dev
 
 # build for production with minification
@@ -24,9 +25,5 @@ npm run unit
 npm test
 
 # 依赖
-npm install less
-npm install vue-router
-npm install element-plus
-npm install @element-plus/icons-vue
-# npm install -D unplugin-vue-components unplugin-auto-import
+npm i
 ```

@@ -1,0 +1,39 @@
+<template>
+  <div class="logo">
+    <div class="seal">灵</div>
+    <div class="text">ideasy</div>
+  </div>
+</template>
+
+<script setup>
+
+</script>
+
+<style scoped>
+
+.logo {
+  display: flex;
+  height: 40px;
+  padding-top: 10px;
+}
+
+.seal {
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  color: white;
+  background: red;
+  font-size: 30px;
+  font-family: '禹卫书法隶书简体(新优化版)';
+  display: inline-block;
+  border-radius: 15px;
+}
+
+.text {
+  width:60px;
+  height: 40px;
+  font-family: serif;
+  font-size: 30px;
+  color: #0D6EFDFF;
+}
+</style>
