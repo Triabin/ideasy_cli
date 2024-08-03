@@ -10,11 +10,12 @@
 </script>
 
 <style scoped>
-
 .logo {
   display: flex;
   height: 40px;
   padding-top: 10px;
+  cursor: pointer;
+  margin-right: 10px;
 }
 
 .seal {
@@ -24,7 +25,6 @@
   color: white;
   background: red;
   font-size: 30px;
-  font-family: '禹卫书法隶书简体(新优化版)';
   display: inline-block;
   border-radius: 15px;
 }

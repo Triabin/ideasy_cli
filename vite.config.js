@@ -1,20 +1,10 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
-// import AutoImport from 'unplugin-auto-import/vite'
-// import Components from 'unplugin-vue-components/vite'
-// import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
-    vue(),
-    // 按需引用element-plus内容配置
-    // AutoImport({
-    //   resolvers: [ElementPlusResolver()],
-    // }),
-    // Components({
-    //   resolvers: [ElementPlusResolver()],
-    // })
+    vue()
   ],
   resolve: {
     // 添加别名
@@ -22,12 +12,16 @@ export default defineConfig({
       {
         find: '@',
         replacement: '/src'
+      }, {
+        find: '@assets',
+        replacement: '/src/assets'
       }
-    ]
+    ],
+    extensions: ['.vue', '.js'],
   },
 
   server: {
-    host: '127.0.0.1',
+    host: '192.168.2.101',
     port: 3000,
     https: false,
     // 设置反向代理，解决跨域

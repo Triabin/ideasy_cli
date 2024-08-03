@@ -38,8 +38,8 @@ const props = defineProps({
 });
 
 onMounted(async () => {
-  canvasRef.value.width = window.innerWidth * devicePixelRatio;
-  canvasRef.value.height = window.innerHeight * devicePixelRatio;
+  canvasRef.value.width = props.fontSize * 8 * devicePixelRatio;
+  canvasRef.value.height = props.fontSize * 2 * devicePixelRatio;
   draw();
 });
 
@@ -183,7 +183,7 @@ canvas {
   /*background: radial-gradient(#FFF, #8C738C);*/
   background: transparent;
   display: block;
-  width: 35vw;
-  height: 35vh;
+  width: 100%;
+  height: 100%;
 }
 </style>

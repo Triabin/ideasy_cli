@@ -6,11 +6,11 @@
     <!-- slogan：捕捉生命中的每一丝灵感，康庄之道，自在其中！ -->
     <p style="color: #747bff; font-family: cursive">捕捉生命中的每一丝灵感，康庄之道，自在其中！</p>
     <!-- 时钟 -->
-    <div style="width: 35vw; margin: 0 auto;">
+    <div style="width: 100%; height: 100%; margin: 0 auto;">
       <Clock color="#283747AF"
              font="sans-serif"
-             :fontSize="320"
-             :density="6"
+             :fontSize="180"
+             :density="4"
       />
     </div>
   </div>
@@ -22,6 +22,7 @@
               style="width: 50vw; height: 50px"
               placeholder="你找啥？"
               :prefix-icon="Search"
+              :style="{ width: '100%' }"
     />
   </div>
 
@@ -137,7 +138,7 @@ const cards = reactive([
 .title-body h1 {
   text-align: center;
   font-size: 2vw;
-  font-family: '方正隶书简体',serif;
+  font-family: 'FZLSJT',serif;
 }
 
 .title-body h1 span {

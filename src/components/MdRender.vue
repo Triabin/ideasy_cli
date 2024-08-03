@@ -3,7 +3,7 @@
   <div v-html="markdownDom"></div>
 </template>
 <script setup>
-import { ref, defineProps, onMounted } from "vue";
+import { ref, onMounted } from "vue";
 import { FileUtils } from "@/utils.js";
 import MarkdownIt from 'markdown-it';
 import markdownItHighlightjs from 'markdown-it-highlightjs';

@@ -45,7 +45,7 @@
   }
   ```
 
-  **![image-20220612132555279](../images/javaRegMatchResult.png)**
+  **![image-20220612132555279](/src/assets/images/javaRegMatchResult.png)**
 
 * 执行过程（原理）
 

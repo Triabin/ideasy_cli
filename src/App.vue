@@ -5,8 +5,8 @@
       <el-header height="60px">
         <div class="layout-header">
           <div class="header-content">
-            <div class="header-logo">
-              <Logo content="灵"/>
+            <div class="header-logo" :onclick="logoClick">
+              <Logo/>
             </div>
             <el-menu
                 :default-active="activeIndex"
@@ -18,14 +18,15 @@
                 router
             >
               <el-menu-item index="/">首页</el-menu-item>
-              <el-menu-item index="2">灵光</el-menu-item>
-              <el-menu-item index="3">前人</el-menu-item>
+              <el-menu-item index="2" v-show="false">灵光</el-menu-item>
+              <el-menu-item index="3" v-show="false">前人</el-menu-item>
               <el-menu-item index="/mine">我的</el-menu-item>
+              <el-menu-item index="/java">Java</el-menu-item>
             </el-menu>
             <div class="header-user" v-show="false"> <!-- 暂不显示 -->
               <div style="float:right; cursor: pointer; color: var(--el-color-primary);">
                 <el-dropdown>
-                  <img style="height: 35px; width: 35px" src="@/assets/images/user-default.png" alt="user"/>
+                  <img style="height: 35px; width: 35px" src="/src/assets/images/user-default.png" alt="user"/>
                   <template #dropdown>
                     <el-dropdown-menu>
                       <el-dropdown-item>个人中心</el-dropdown-item>
@@ -44,7 +45,7 @@
         <div class="layout-main">
           <div class="main-content">
             <!-- 路由 -->
-            <router-view/>
+            <router-view></router-view>
           </div>
         </div>
       </el-main>
@@ -55,9 +56,16 @@
 <script setup>
 import {ref} from "vue";
 import Logo from '@/components/Logo.vue';
+import {useRouter} from "vue-router";
 
-const activeIndex = ref('1');
+const activeIndex = ref('/');
 const handleSelect = (key, keyPath) => console.log(key, keyPath);
+const router = useRouter();
+
+const logoClick = () => {
+  activeIndex.value = '/';
+  router.push('/');
+}
 </script>
 
 <style lang="scss" scoped>
@@ -113,5 +121,6 @@ const handleSelect = (key, keyPath) => console.log(key, keyPath);
 /* 3.1 页面主题部分 */
 .layout-main .main-content {
   max-width: 1280px;
+  width: 100%;
 }
 </style>

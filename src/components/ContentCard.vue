@@ -13,7 +13,6 @@
 </template>
 <script setup>
 import { Tools, Document } from "@element-plus/icons-vue";
-import { defineProps } from "vue";
 
 const props = defineProps({
   // 类型，tool为工具，article为博客文章

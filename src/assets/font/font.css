@@ -4,11 +4,6 @@
 }
 
 @font-face {
-  font-family: '方正隶书简体';
+  font-family: 'FZLSJT';
   src: url("方正隶书简体.ttf");
-}
-
-@font-face {
-  font-family: '禹卫书法隶书简体(新优化版)';
-  src: url("禹卫书法隶书简体(新优化版).ttf");
 }
