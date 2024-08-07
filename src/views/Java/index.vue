@@ -31,14 +31,13 @@ const showBackBtn = ref(false);
 
 // 卡片点击事件
 const cardOnclick = (path) => {
-  router.push(path);
   javaShow.value = false;
   showBackBtn.value = true;
+  router.push(path);
 }
 
 // 返回父页面方法
 const back = () => {
-  debugger;
   javaShow.value = true;
   showBackBtn.value = false;
   router.push('/java');

@@ -3,8 +3,116 @@
 ## 基础概念
 
 1. 解释Java中的多线程以及如何实现它。
+
+   在Java中，多线程是指在一个程序中同时执行多个线程的能力。每个线程可以执行不同的任务，这样可以提高程序的执行效率，因为程序的不同部分可以并行执行。
+
+   Java提供了几种实现多线程的方法：
+
+   ① 继承Thread类，并重写`run()`方法，这个方法体就是线程要执行的代码，然后创建这个类，调用其`start()`方法启动线程。
+
+   ```java
+   package com.triabin.ideasy_server;
+   
+   import org.junit.Test;
+   
+   /**
+    * 类描述：我的测试类
+    *
+    * @author Triabin
+    * @date 2024-07-10 03:33:22
+    */
+   public class MyTest {
+   
+       class MyThread extends Thread {
+           @Override
+           public void run() {
+               System.out.println("Mythread " + Thread.currentThread().getName() + " started");
+           }
+       }
+   
+       @Test
+       public void test() {
+           MyThread mt1 = new MyThread();
+           MyThread mt2 = new MyThread();
+           MyThread mt3 = new MyThread();
+           mt1.start(); //Mythread Thread-0 started
+           mt2.start(); //Mythread Thread-1 started
+           mt3.start(); //Mythread Thread-2 started
+       }
+   }
+   ```
+
+   ② 实现Runnable接口，重写`run()`方法，同样地，这个方法体就是此线程要执行的代码。
+
+   ```java
+   package com.triabin.ideasy_server;
+   
+   import org.junit.Test;
+   
+   /**
+    * 类描述：我的测试类
+    *
+    * @author Triabin
+    * @date 2024-07-10 03:33:22
+    */
+   public class MyTest {
+   
+       @Test
+       public void test() {
+           Runnable myRunnable = () -> System.out.println("我的线程：" + Thread.currentThread().getName());
+           Thread t1 = new Thread(myRunnable);
+           Thread t2 = new Thread(myRunnable);
+           Thread t3 = new Thread(myRunnable);
+   
+           t1.start(); // 我的线程：Thread-0
+           t2.start(); // 我的线程：Thread-1
+           t3.start(); // 我的线程：Thread-2
+       }
+   }
+   ```
+
+   ③ 使用线程池，可以通过`ExcutorService`来管理线程池，这样可以避免频繁创建和销毁线程所带来的开销，使用线程池可以更有效地管理系统资源。
+
+   ```java
+   package com.triabin.ideasy_server;
+   
+   import org.junit.Test;
+   
+   import java.util.concurrent.ExecutorService;
+   import java.util.concurrent.Executors;
+   
+   /**
+    * 类描述：我的测试类
+    *
+    * @author Triabin
+    * @date 2024-07-10 03:33:22
+    */
+   public class MyTest {
+   
+       @Test
+       public void test() {
+           ExecutorService executor = Executors.newFixedThreadPool(10);
+           for (int i = 0; i < 3; i++) {
+               int finalI = i;
+               executor.submit(() -> System.out.println("任务" + finalI + Thread.currentThread().getName()));
+           }
+           executor.shutdown();
+       }
+   }
+   // 任务1pool-1-thread-2
+   // 任务2pool-1-thread-3
+   // 任务0pool-1-thread-1
+   ```
+
 2. 描述Java内存模型，特别是堆和栈的区别。
+
+   Java内存模型中，程序中的所有变量都存储在不同的存储区域中，主要包括两个区域：堆（heap）和栈（stack）。
+
+   * 堆（heap）：堆是Java程序运行时动态分配的内存区域，所有类的实例和数组都在堆上创建。对象的生命周期由垃圾回收（GC）算法管理了。堆内存中的对象可以被多个线程共享，通过共享对象，线程之间可以进行通信。
+   * 栈（stack）：栈是Java程序中用于存储方法调用的信息区域。每当一个方法被调用时，JVM会在栈上创建一个相应的栈帧（Stack Frame），用于存储该方法的局部变量和操作数。栈内存中的数据仅限于方法内部使用，方法一旦返回，其对应的栈帧就会被销毁，内存被回收。
+
 3. 什么事Java中的接口和抽象类，它们之间的区别是什么？
+
 4. 解释Java中的异常处理机制，并给出一个实际应用的例子。
 
 ## 集合框架

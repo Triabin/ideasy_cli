@@ -8,7 +8,7 @@ export const FileUtils = {
   /**
    * 方法描述：读取文件内容（nodejs环境中）
    * @param path {String} 文件路径
-   * @returns {String} 文件内容
+   * @return {String} 文件内容
    */
   readFile: async (path) => {
     const response = await fetch(path);
@@ -63,4 +63,23 @@ export const TimeUtils = {
       throw new Error(`${time} is not a time string!`);
     }
   }
+}
+
+/**
+ * @desc element-plus相关的工具类
+ */
+export const ElePlusUtils = {
+  /**
+   * 方法描述：轮流获取element-plus的type属性几个值
+   *
+   * @return { ('primary' | 'success' | 'info' | 'warning' | 'danger') }
+   */
+  turnTypes: (() => {
+    let lastIndex = 0;
+    let types = ['primary', 'success', 'info', 'warning', 'danger'];
+    return () => {
+      if (lastIndex >= types.length - 1) lastIndex = 0;
+      return types[lastIndex++];
+    };
+  })()
 }

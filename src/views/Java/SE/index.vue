@@ -22,7 +22,7 @@
   </el-row>
 </template>
 <script setup>
-import MdRender from "@/components/MdRender.vue";
+import MdRender from "@/components/MdRender";
 
 </script>
 <style lang="scss" scoped>

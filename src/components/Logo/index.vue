@@ -13,9 +13,7 @@
 .logo {
   display: flex;
   height: 40px;
-  padding-top: 10px;
   cursor: pointer;
-  margin-right: 10px;
 }
 
 .seal {
@@ -27,6 +25,7 @@
   font-size: 30px;
   display: inline-block;
   border-radius: 15px;
+  padding-top: 7px;
 }
 
 .text {
@@ -35,5 +34,6 @@
   font-family: serif;
   font-size: 30px;
   color: #0D6EFDFF;
+  padding-top: 5px;
 }
 </style>

@@ -1,11 +1,14 @@
-import { defineConfig } from 'vite'
-import vue from '@vitejs/plugin-vue'
+import { defineConfig } from 'vite';
+import vue from '@vitejs/plugin-vue';
+import { VitePluginVitepress } from "vite-plugin-vitepress";
 
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
-    vue()
+    VitePluginVitepress(),
+    vue({ include: [/\.vue$/, /\.md$/] })
   ],
+
   resolve: {
     // 添加别名
     alias: [
