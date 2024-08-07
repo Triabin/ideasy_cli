@@ -6,7 +6,7 @@
                :title="card.title"
                :page-attr="card.pageAttr"
                :router-name="card.routerName"
-               :router-path="card.routerPath"
+               :url="card.url"
                :abstract="card.abstract"
                :labels="card.labels"
     ></item-card>

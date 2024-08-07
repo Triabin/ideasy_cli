@@ -22,7 +22,6 @@
               <el-menu-item index="/ideasy">灵光</el-menu-item>
               <el-menu-item index="/experience">前人</el-menu-item>
               <el-menu-item index="/mine">我的</el-menu-item>
-              <el-menu-item index="/java">Java</el-menu-item>
             </el-menu>
 
             <div class="header-user">

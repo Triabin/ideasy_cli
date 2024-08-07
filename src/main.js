@@ -7,7 +7,7 @@ import components from '@/components/index.js';
 import CustomFunc from "@/plugins/custom-func.js";
 import 'element-plus/dist/index.css';
 import '@/api/mock.js';
-import '@/style.css';
+import '@/common/style.css';
 import '@/assets/font/font.css';
 import "vite-plugin-vitepress/dist/theme.mjs";
 

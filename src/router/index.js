@@ -39,6 +39,14 @@ const router = createRouter({
             title: '五子棋'
           },
           component: () => import('@/views/Ideasy/GoBang')
+        },
+        {
+          path: 'js-date-str-convert',
+          name: 'JsDateStrConvert',
+          meta: {
+            title: 'JS时间对象与String相互转换'
+          },
+          component: () => import('@/views/Ideasy/JsDateStrConvert/JS时间对象与String相互转换.md')
         }
       ]
     },
@@ -89,47 +97,6 @@ const router = createRouter({
             title: '正则表达式（Java）'
           },
           component: () => import('@/views/Mine/RegexForJava/正则表达式（Java）.md')
-        }
-      ]
-    },
-    {
-      path: '/java',
-      name: 'Java',
-      meta: {
-        title: 'Java'
-      },
-      component: () => import('@/views/Java'),
-      children: [
-        {
-          path: 'se',
-          name: 'JavaSE',
-          meta: { title: 'Java基础' },
-          component: () => import('@/views/Java/SE')
-        }, {
-          path: 'redis',
-          name: 'Redis',
-          meta: { title: 'Redis' },
-          component: () => import('@/views/Java/Redis')
-        }, {
-          path: 'mysql',
-          name: 'MySQL',
-          meta: { title: 'MySQL' },
-          component: () => import('@/views/Java/MySQL')
-        }, {
-          path: 'framework',
-          name: 'Framework',
-          meta: { title: '框架' },
-          component: () => import('@/views/Java/Framework')
-        }, {
-          path: 'microservice',
-          name: 'Microservice',
-          meta: { title: '微服务' },
-          component: () => import('@/views/Java/Microservice')
-        }, {
-          path: 'mom',
-          name: 'MOM',
-          meta: { title: '消息中间件' },
-          component: () => import('@/views/Java/MOM')
         }
       ]
     }

@@ -5,7 +5,7 @@
 
 <script setup>
 import { ref, onMounted } from 'vue';
-import { NumUtils } from "@/utils.js";
+import { NumUtils } from "@/common/utils.js";
 
 const canvasRef = ref(null);
 const ctx = ref(null);

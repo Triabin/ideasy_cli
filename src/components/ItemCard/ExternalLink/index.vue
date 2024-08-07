@@ -1,6 +1,7 @@
-<!-- 页面卡片组件 -->
+<!-- 页面卡片组件：外部链接 -->
 <template>
-  <router-link :to="{ name: props.routerName, params: { path: props.url } }">
+  <!-- 外部链接 -->
+  <a :href="props.url" target="_blank">
     <el-card class="card">
       <div class="title">
         <Document v-if="props.pageAttr === 'article'" style="width: 1em; height: 1em; margin-right: 8px"/>
@@ -31,7 +32,7 @@
         </el-text>
       </div>
     </el-card>
-  </router-link>
+  </a>
 </template>
 <script setup>
 import { Document, Tools } from "@element-plus/icons-vue";

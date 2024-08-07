@@ -4,7 +4,7 @@
     <!-- 名称：灵光 -->
     <h1>灵光 <span>IDEASY</span></h1>
     <!-- slogan：捕捉生命中的每一丝灵感，康庄之道，自在其中！ -->
-    <div class="vp-doc">
+    <div>
       <p style="color: #747bff; font-family: cursive">捕捉生命中的每一丝灵感，康庄之道，自在其中！</p>
     </div>
     <!-- 时钟 -->
@@ -34,9 +34,10 @@
                :key="card.routerName"
                :title="card.title"
                :router-name="card.routerName"
-               :router-path="card.routerPath"
+               :url="card.url"
                :page-attr="card.pageAttr"
                :abstract="card.abstract"
+               :labels="card.labels"
     ></item-card>
   </div>
 </template>
@@ -46,19 +47,13 @@ import { ref, reactive } from 'vue';
 import Clock from '@/components/DynamicClock';
 import { Search } from '@element-plus/icons-vue';
 import ItemCard from "@/components/ItemCard";
+import { cards as ideasyCards } from "@/views/Ideasy/cards.js"
+import { cards as mineCards } from "@/views/Mine/cards.js"
 
 // 搜索框关键字
 const searchKey = ref('');
 
-const cards = reactive([
-  {
-    pageAttr: 'article',
-    title: 'Redis面试题',
-    routerName: 'Redis',
-    routerPath: '/java/redis',
-    abstract: 'Java面试Redis篇：常见面试题目详解'
-  }
-]);
+const cards = reactive([ ...ideasyCards, ...mineCards ]);
 </script>
 
 <style scoped>
