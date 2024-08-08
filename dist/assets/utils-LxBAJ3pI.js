@@ -1,1 +1,0 @@
-const r={randomInt:(t,n)=>Math.floor(Math.random()*(n-t+1))+t},s={turnTypes:(()=>{let t=0,n=["primary","success","info","warning","danger"];return()=>(t>=n.length-1&&(t=0),n[t++])})()};export{s as E,r as N};
