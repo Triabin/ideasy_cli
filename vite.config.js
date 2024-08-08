@@ -4,7 +4,6 @@ import { VitePluginVitepress } from "vite-plugin-vitepress";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: '/ideasy_cli/',
   plugins: [
     VitePluginVitepress(),
     vue({ include: [/\.vue$/, /\.md$/] })
