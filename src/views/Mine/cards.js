@@ -3,6 +3,15 @@ import { ItemCardEle } from "@/common/classes.js";
 export const cards = [
   new ItemCardEle(
     false,
+    'Cookie、Session、Token区别',
+    'article',
+    '本质是不是同一种东西，但是都与维持状态信息有关，例如维持登录状态信息，使用这个3个东西都能做。',
+    'CookieSessionToken',
+    '/mine/cookie-session-token',
+    ['Cookie', 'Session', 'Token', '安全']
+  ),
+  new ItemCardEle(
+    false,
     '面试：Java基础',
     'article',
     '基础概念、集合框架、泛型与类型擦除、并发与多线程、JVM与性能优化、设计模式、数据库与JDBC、框架与库、SpringMVC的理解',

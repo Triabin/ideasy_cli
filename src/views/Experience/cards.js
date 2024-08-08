@@ -9,5 +9,5 @@ export const cards = [
     'JavaGide',
     'https://javaguide.cn/',
     ['后端', 'Java', '面试']
-    )
+  )
 ]

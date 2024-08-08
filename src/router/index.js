@@ -67,6 +67,14 @@ const router = createRouter({
       component: () => import('@/views/Mine'),
       children: [
         {
+          path: 'cookie-session-token',
+          name: 'CookieSessionToken',
+          meta: {
+            title: 'Cookie、Session、Token区别'
+          },
+          component: () => import('@/views/Mine/CookieSessionToken/Cookie、Session、Token区别.md')
+        },
+        {
           path: 'interv-javase',
           name: 'IntervJavase',
           meta: {

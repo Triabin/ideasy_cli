@@ -3,6 +3,7 @@
   <div class="area-table" v-if="router.currentRoute.value.path === '/mine'">
     <item-card v-for="card in cardList"
                :key="card.routerName"
+               :is-external-link="card.isExternalLink"
                :title="card.title"
                :page-attr="card.pageAttr"
                :router-name="card.routerName"

@@ -32,6 +32,7 @@
   <div class="content">
     <item-card v-for="card in cards"
                :key="card.routerName"
+               :is-external-link="card.isExternalLink"
                :title="card.title"
                :router-name="card.routerName"
                :url="card.url"
@@ -49,11 +50,12 @@ import { Search } from '@element-plus/icons-vue';
 import ItemCard from "@/components/ItemCard";
 import { cards as ideasyCards } from "@/views/Ideasy/cards.js"
 import { cards as mineCards } from "@/views/Mine/cards.js"
+import { cards as experienceCards } from "@/views/Experience/cards.js";
 
 // 搜索框关键字
 const searchKey = ref('');
 
-const cards = reactive([ ...ideasyCards, ...mineCards ]);
+const cards = reactive([ ...ideasyCards, ...mineCards, ...experienceCards ]);
 </script>
 
 <style scoped>
