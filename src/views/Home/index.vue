@@ -39,6 +39,7 @@
                :page-attr="card.pageAttr"
                :abstract="card.abstract"
                :labels="card.labels"
+               :update-at="card.updatedAt"
     ></item-card>
   </div>
 </template>
@@ -51,11 +52,16 @@ import ItemCard from "@/components/ItemCard";
 import { cards as ideasyCards } from "@/views/Ideasy/cards.js"
 import { cards as mineCards } from "@/views/Mine/cards.js"
 import { cards as experienceCards } from "@/views/Experience/cards.js";
+import { TimeUtils } from "@/common/utils.js";
 
 // 搜索框关键字
 const searchKey = ref('');
 
-const cards = reactive([ ...ideasyCards, ...mineCards, ...experienceCards ]);
+const cards = reactive([ ...ideasyCards, ...mineCards, ...experienceCards ].toSorted((e1, e2) => {
+  let date1 = TimeUtils.convert(e1.updatedAt, TimeUtils.format1);
+  let date2 = TimeUtils.convert(e2.updatedAt, TimeUtils.format1);
+  return date2 - date1;
+}));
 </script>
 
 <style scoped>

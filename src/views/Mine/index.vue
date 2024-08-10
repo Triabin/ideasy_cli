@@ -10,6 +10,7 @@
                :url="card.url"
                :abstract="card.abstract"
                :labels="card.labels"
+               :update-at="card.updatedAt"
     ></item-card>
   </div>
   <router-view></router-view>
@@ -19,8 +20,13 @@ import { reactive } from "vue";
 import ItemCard from "@/components/ItemCard";
 import { cards } from "./cards.js";
 import { useRouter } from "vue-router";
+import { TimeUtils } from "@/common/utils.js";
 
-const cardList = reactive(cards);
+const cardList = reactive(cards.toSorted((e1, e2) => {
+  let date1 = TimeUtils.convert(e1.updatedAt, TimeUtils.format1);
+  let date2 = TimeUtils.convert(e2.updatedAt, TimeUtils.format1);
+  return date2 - date1;
+}));
 const router = useRouter();
 </script>
 <style lang="scss" scoped>

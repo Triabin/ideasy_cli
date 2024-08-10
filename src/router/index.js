@@ -25,6 +25,14 @@ const router = createRouter({
       component: () => import('@/views/Ideasy'),
       children: [
         {
+          path: 'intellij-idea-ist-time',
+          name: 'IntellijIdeaIstTime',
+          meta: {
+            title: 'IntelliJ IDEA插入时间文本'
+          },
+          component: () => import('@/views/Ideasy/IntelliJIDEAIstTime/IntelliJ_IDEA插入时间文本.md')
+        },
+        {
           path: 'dynamic-clock',
           name: 'DynamicClock',
           meta: {

@@ -10,9 +10,11 @@ export class ItemCardEle {
    * @param abstract {String} 卡片文章摘要/内容简介
    * @param routerName {String} 内部网页的路由名称
    * @param url {String} 内部网页的路由地址/外部网址的地址
-   * @param labels {Array} 网页/内容标签
+   * @param labels {Array<String>} 网页/内容标签
+   * @param createAt {String} 创建时间字符串（yyyy-MM-dd HH:mm:ss）
+   * @param updatedAt {String|undefined} 修改时间字符串（yyyy-MM-dd HH:mm:ss）
    */
-  constructor(isExternalLink, title, pageAttr, abstract, routerName, url, labels) {
+  constructor(isExternalLink, title, pageAttr, abstract, routerName, url, labels, createAt, updatedAt) {
     this.isExternalLink = isExternalLink;
     this.title = title;
     this.pageAttr = pageAttr;
@@ -20,5 +22,7 @@ export class ItemCardEle {
     this.routerName = routerName;
     this.url = url;
     this.labels = labels;
+    this.createdAt = createAt;
+    this.updatedAt = updatedAt || createAt;
   }
 }
