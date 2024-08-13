@@ -78,7 +78,7 @@ export const ElePlusUtils = {
     let lastIndex = 0;
     let types = ['primary', 'success', 'info', 'warning', 'danger'];
     return () => {
-      if (lastIndex >= types.length - 1) lastIndex = 0;
+      if (lastIndex > types.length - 1) lastIndex = 0;
       return types[lastIndex++];
     };
   })()

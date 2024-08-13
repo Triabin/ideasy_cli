@@ -75,6 +75,30 @@ const router = createRouter({
       component: () => import('@/views/Mine'),
       children: [
         {
+          path: 'java-functional',
+          name: 'JavaFunctional',
+          meta: {
+            title: 'Java四大函数式编程接口'
+          },
+          component: () => import('@/views/Mine/JavaFunctional/Java四大函数式编程接口.md')
+        },
+        {
+          path: 'java-reference',
+          name: 'JavaReference',
+          meta: {
+            title: 'Java四大引用-强软弱虚'
+          },
+          component: () => import('@/views/Mine/JavaReference/Java四大引用-强软弱虚.md')
+        },
+        {
+          path: 'java-proxy',
+          name: 'JavaProxy',
+          meta: {
+            title: 'Java代理模式'
+          },
+          component: () => import('@/views/Mine/JavaProxy/Java代理模式.md')
+        },
+        {
           path: 'cookie-session-token',
           name: 'CookieSessionToken',
           meta: {
