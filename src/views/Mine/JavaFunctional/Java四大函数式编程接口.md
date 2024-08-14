@@ -65,7 +65,7 @@ public interface Consumer<T> {
 
 `java.util.function.Consumer`接口，是一个消费型的接口，消费数据类型由泛型决定。
 
-**抽象方法`void accept(T t)`：**用于消费指定泛型T的对象的数据。
+**抽象方法`void accept(T t)`：** 用于消费指定泛型T的对象的数据。
 
 用例：
 
@@ -83,7 +83,7 @@ Hello consumer!
 Process finished with exit code 0
 ```
 
-**默认方法`default Consumer<T> andThen(Consumer<? super T> after)`：**用于连接多个consumer，传一个参数后顺次执行accept方法（`consumer1.andThen(consumer2).andThen(consumer3)...`），最后返回一个consumer，使用返回的这个consumer调用它的accept方法，传入的参数会顺序传入每一个consumer的accept方法执行。
+**默认方法`default Consumer<T> andThen(Consumer<? super T> after)`：** 用于连接多个consumer，传一个参数后顺次执行accept方法（`consumer1.andThen(consumer2).andThen(consumer3)...`），最后返回一个consumer，使用返回的这个consumer调用它的accept方法，传入的参数会顺序传入每一个consumer的accept方法执行。
 
 用例：
 
@@ -160,7 +160,7 @@ public interface Function<T, R> {
 
 `java.util.function.Function`接口，是一个函数型接口，用来根据一个类型的数据得到另外一个类型的数据。
 
-**抽象方法`R apply(T t);`：**将参数类型T传入的参数转换为R类型的值。
+**抽象方法`R apply(T t);`：** 将参数类型T传入的参数转换为R类型的值。
 
 用例：
 
@@ -184,7 +184,7 @@ public void test() {
 Process finished with exit code 0
 ```
 
-**默认方法`default <V> Function<V, R> compose(Function<? super V, ? extends T> before)`：**用于组合两个Function接口，得到一个新的Function接口。具体来说，如果有两个函数`f(x)`和`g(x)`，如果`f(x)`调用compose函数并传入了`g(x)`作为方法参数组合得到一个新的函数`h(x)`，其效果相当于`h(x)=f(g(x))`。
+**默认方法`default <V> Function<V, R> compose(Function<? super V, ? extends T> before)`：** 用于组合两个Function接口，得到一个新的Function接口。具体来说，如果有两个函数`f(x)`和`g(x)`，如果`f(x)`调用compose函数并传入了`g(x)`作为方法参数组合得到一个新的函数`h(x)`，其效果相当于`h(x)=f(g(x))`。
 
 用例：
 
@@ -210,9 +210,9 @@ Result: 36
 Process finished with exit code 0
 ```
 
-**默认方法`default <V> Function<T, V> andThen(Function<? super R, ? extends V> after)`：**该方法与compose方法的最终效果的函数执行顺序相反，先执行调用方的apply方法，该方法的返回结果作为传入的Function接口apply方法的参数再执行。
+**默认方法`default <V> Function<T, V> andThen(Function<? super R, ? extends V> after)`：** 该方法与compose方法的最终效果的函数执行顺序相反，先执行调用方的apply方法，该方法的返回结果作为传入的Function接口apply方法的参数再执行。
 
-**静态方法`static <T> Function<T, T> identity()`：**`identity`方法的用途是创建一个函数，该函数接收一个参数并返回该参数的引用（或原始值）。这个函数在函数式编程中被称为恒等函数或身份函数。恒等函数的定义是对于所有输入x，`f(x) = x`。
+**静态方法`static <T> Function<T, T> identity()`：** `identity`方法的用途是创建一个函数，该函数接收一个参数并返回该参数的引用（或原始值）。这个函数在函数式编程中被称为恒等函数或身份函数。恒等函数的定义是对于所有输入x，`f(x) = x`。
 
 `identity`方法是函数式编程中非常有用的一个操作，它允许你轻松地创建恒等函数，而不需要手动实现。恒等函数在各种场景下都有用途，比如当你需要返回一个方法参数的引用（或原始值）时，或者当你需要将一个对象作为函数的返回值时。
 
@@ -252,7 +252,7 @@ public interface Predicate<T> {
 
 `java.util.function.Predicate`接口，是一个断定型接口，用于对指定类型的数据进行判断，从而得到一个判断结果（`boolean`类型的值）。
 
-**抽象方法`boolean test(T t)`：**抽象方法`boolean test(T t)`，用于定义判定条件。
+**抽象方法`boolean test(T t)`：** 抽象方法`boolean test(T t)`，用于定义判定条件。
 
 用例：
 
@@ -265,10 +265,10 @@ public void test() {
 }
 ```
 
-**默认方法`default Predicate<T> and(Predicate<? super T> other)`：**用于创建一个新的`Predicate<T>`接口，新的接口使用`短路与(||)`判断两个条件是否成立。
+**默认方法`default Predicate<T> and(Predicate<? super T> other)`：** 用于创建一个新的`Predicate<T>`接口，新的接口使用`短路与(||)`判断两个条件是否成立。
 
-**默认方法`default Predicate<T> negate()`：**用于创建一个新的`Predicate<T>`接口，新的接口使用`非(!)`判断原条件，即与原来相反。
+**默认方法`default Predicate<T> negate()`：** 用于创建一个新的`Predicate<T>`接口，新的接口使用`非(!)`判断原条件，即与原来相反。
 
-**默认方法`default Predicate<T> or(Predicate<? super T> other)`：**用于创建一个新的`Predicate<T>`接口，新接口使用`短路或(||)`判断两个条件是否成立。
+**默认方法`default Predicate<T> or(Predicate<? super T> other)`：** 用于创建一个新的`Predicate<T>`接口，新接口使用`短路或(||)`判断两个条件是否成立。
 
-**静态方法`static <T> Predicate<T> isEqual(Object targetRef)`：**用于创建一个新的`Predicate<T>`接口，新接口用于判断指定对象（isEqual方法接收的参数`targetRef`）与新接口test方法接收的参数是否相等。
+**静态方法`static <T> Predicate<T> isEqual(Object targetRef)`：** 用于创建一个新的`Predicate<T>`接口，新接口用于判断指定对象（isEqual方法接收的参数`targetRef`）与新接口test方法接收的参数是否相等。

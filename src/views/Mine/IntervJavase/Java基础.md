@@ -155,7 +155,7 @@
 
 ## SpringMVC的理解
 
-**概念：**SpringMVC是一种基于Java语言开发，实现了Web MVC设计模式，请求驱动类型的轻量级Web框架。<br/>采用了MVC架构模式的思想，通过吧Model，View，Controller分离，将Web层进行职责解耦从而把复杂的Web应用分成逻辑清晰的几个组件，在SpriingMVC中有9大重要的组件：
+**概念：** SpringMVC是一种基于Java语言开发，实现了Web MVC设计模式，请求驱动类型的轻量级Web框架。<br/>采用了MVC架构模式的思想，通过吧Model，View，Controller分离，将Web层进行职责解耦从而把复杂的Web应用分成逻辑清晰的几个组件，在SpriingMVC中有9大重要的组件：
 
 1. MultipartResolver文件处理器
 
@@ -193,7 +193,7 @@
 
    其对应的初始化方法是`initFlashMapManager(context)`，在实际应用中，为了避免重复提交，我们可以在处理完post请求后重定向到另一个get请求，这个get请求可以用来返回页面青染需要的信息，FlashMap就是用于这种请求重定向场景中的参数传递。
 
-**请求工作流程：**在SpringMVC的九大组件中，涉及请求处理响应的核心组件分别是HandlerMapping、HandlerAdapter、ViewResolver。下图为一次完整的请求中，SpringMVC的完整工作流程：
+**请求工作流程：** 在SpringMVC的九大组件中，涉及请求处理响应的核心组件分别是HandlerMapping、HandlerAdapter、ViewResolver。下图为一次完整的请求中，SpringMVC的完整工作流程：
 
 ![image-20240731233316947](https://gitee.com/triabin/img_bed/raw/master/2024/07/31/9739e6074b0852fb322829a82833097b-image-20240731233316947.png)
 

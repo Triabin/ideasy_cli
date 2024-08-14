@@ -75,6 +75,14 @@ const router = createRouter({
       component: () => import('@/views/Mine'),
       children: [
         {
+          path: 'qr-sqrt',
+          name: 'QRSqrt',
+          meta: {
+            title: '平方根倒数算法'
+          },
+          component: () => import('@/views/Mine/QRSqrt/平方根倒数算法.md')
+        },
+        {
           path: 'java-functional',
           name: 'JavaFunctional',
           meta: {

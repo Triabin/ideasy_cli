@@ -184,7 +184,7 @@ public interface InvocationHandler {
 2. `Method method`：与代理类对象调用的方法相对应；
 3. `Object[] args`：当前method方法的参数。
 
-大概流程是，**通过`Proxy`类的`newProxyInstance()`方法创建的代理对象在调用方法的时候，实际会调用到自定义实现的`InvocationHandler`接口类的`invode()`方法。**代理添加的处理逻辑可以在`invoke()`方法中定义（增强），例如方法执行前后所需要增加的处理逻辑。
+大概流程是，**通过`Proxy`类的`newProxyInstance()`方法创建的代理对象在调用方法的时候，实际会调用到自定义实现的`InvocationHandler`接口类的`invode()`方法。** 代理添加的处理逻辑可以在`invoke()`方法中定义（增强），例如方法执行前后所需要增加的处理逻辑。
 
 使用步骤：
 

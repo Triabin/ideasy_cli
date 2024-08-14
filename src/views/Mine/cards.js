@@ -3,6 +3,17 @@ import { ItemCardEle } from "@/common/classes.js";
 export const cards = [
   new ItemCardEle(
     false,
+    '平方根倒数算法',
+    'article',
+    '平方根倒数快速算法，顾名思义就是求出一个平方根的倒数，因为这种算法速度很快，所以叫做快速算法。这个算法是由格雷格·沃什（Greg Walsh）搞出来的，80年代的沃什在一家叫做Ardent的公司工作，Ardent的主营业务是给超算中心制造工作站，但是Ardent的小型机性能比较捉急，沃什的工作就是给这些性能堪忧的硬件优化3D程序，而计算平方根倒数是3D程序的基础，沃什只好从底层开始下手。',
+    'QRSqrt',
+    '/mine/qr-sqrt',
+    ['算法', '平方根倒数', '3D'],
+    '2024-08-14 20:21:53',
+    undefined
+  ),
+  new ItemCardEle(
+    false,
     'Java四大函数式编程接口',
     'article',
     'Java中的函数式接口：在Java中，函数式接口是一种特殊的接口，它只定义了一个抽象方法，Java函数式接口主要是为了配合Lambda表达式和方法引用而在jdk1.8引入的，它使得在Java中实现函数式编程风格成为可能。',
