@@ -30,16 +30,16 @@
 
   <!-- 默认显示内容 -->
   <div class="content">
-    <item-card v-for="card in cards"
-               :key="card.routerName"
+    <item-card v-for="(card, index) in cards"
+               :key="index"
                :is-external-link="card.isExternalLink"
                :title="card.title"
+               :page-attr="card.pageAttr"
+               :desc="card.desc"
                :router-name="card.routerName"
                :url="card.url"
-               :page-attr="card.pageAttr"
-               :abstract="card.abstract"
                :labels="card.labels"
-               :update-at="card.updatedAt"
+               :updated-at="card.updatedAt"
     ></item-card>
   </div>
 </template>
@@ -48,18 +48,18 @@
 import { ref, reactive } from 'vue';
 import Clock from '@/components/DynamicClock';
 import { Search } from '@element-plus/icons-vue';
+import { routes } from "@/router/index.js";
+import { cards as recoCards } from "@/views/RecoPages/cards.js";
+import { ItemCardEle } from "@/common/classes.js";
 import ItemCard from "@/components/ItemCard";
-import { cards as ideasyCards } from "@/views/Ideasy/cards.js"
-import { cards as mineCards } from "@/views/Mine/cards.js"
-import { cards as experienceCards } from "@/views/Experience/cards.js";
 import { TimeUtils } from "@/common/utils.js";
 
 // 搜索框关键字
 const searchKey = ref('');
 
-const cards = reactive([ ...ideasyCards, ...mineCards, ...experienceCards ].toSorted((e1, e2) => {
-  let date1 = TimeUtils.convert(e1.updatedAt, TimeUtils.format1);
-  let date2 = TimeUtils.convert(e2.updatedAt, TimeUtils.format1);
+const cards = reactive([...recoCards, ...ItemCardEle.createByRoute(routes)].toSorted((e1, e2) => {
+  let date1 = TimeUtils.convert(e1.updatedAt);
+  let date2 = TimeUtils.convert(e2.updatedAt);
   return date2 - date1;
 }));
 </script>

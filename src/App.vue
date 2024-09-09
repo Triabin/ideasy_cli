@@ -9,19 +9,33 @@
               <Logo/>
             </div>
 
-            <el-menu
-                :default-active="activeIndex"
-                class="nav-menu"
-                mode="horizontal"
-                @select="handleSelect"
-                text-color="#0D6EFDAB"
-                active-text-color="#0D6EFDCB"
-                router
+            <el-menu :default-active="activeIndex"
+                     class="nav-menu"
+                     mode="horizontal"
+                     @select="handleSelect"
+                     text-color="#0D6EFDAB"
+                     active-text-color="#0D6EFDCB"
+                     router
             >
               <el-menu-item index="/home">首页</el-menu-item>
-              <el-menu-item index="/ideasy">灵光</el-menu-item>
-              <el-menu-item index="/experience">前人</el-menu-item>
-              <el-menu-item index="/mine">我的</el-menu-item>
+              <el-menu-item index="/tool">工具</el-menu-item>
+              <el-menu-item index="/game">小游戏</el-menu-item>
+              <el-sub-menu index="/programming">
+                <template #title>编程语言</template>
+                <el-menu-item index="/programming/c-cpp">C/C++</el-menu-item>
+                <el-menu-item index="/programming/java">Java</el-menu-item>
+                <el-menu-item index="/programming/python">Python</el-menu-item>
+                <el-sub-menu index="/programming/front">
+                  <template #title>前端</template>
+                  <el-menu-item index="/programming/front/html">html</el-menu-item>
+                  <el-menu-item index="/programming/front/css">css</el-menu-item>
+                  <el-menu-item index="/programming/front/javascript">JavaScript</el-menu-item>
+                </el-sub-menu>
+                <el-menu-item index="/programming/cangjie">仓颉</el-menu-item>
+              </el-sub-menu>
+              <el-menu-item index="/note">笔记</el-menu-item>
+              <el-menu-item index="/blog">博客</el-menu-item>
+              <el-menu-item index="/reco-pages">收藏网页</el-menu-item>
             </el-menu>
 
             <div class="header-user">
@@ -53,7 +67,7 @@
       </el-main>
     </el-container>
   </div>
-  <el-backtop :right="100" :bottom="100" />
+  <el-backtop :right="100" :bottom="100"/>
 </template>
 
 <script setup>

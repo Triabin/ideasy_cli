@@ -5,7 +5,7 @@
 
 <script setup>
 import { ref, onMounted } from 'vue';
-import { NumUtils } from "@/common/utils.js";
+import { MathUtils } from "@/common/utils.js";
 
 const canvasRef = ref(null);
 const ctx = ref(null);
@@ -47,19 +47,20 @@ onMounted(async () => {
 class Particle {
   constructor() {
     // 粒子半径
-    this.r = NumUtils.randomInt(2 * devicePixelRatio, 7 * devicePixelRatio);
+    this.r = MathUtils.randomInt(2 * devicePixelRatio, 7 * devicePixelRatio);
     // 环半径
     const ar = Math.min(canvasRef.value.width, canvasRef.value.height) / 2;
     // 粒子初始位置圆心与环圆心形成的夹角（随机）
-    const rad = NumUtils.randomInt(0, 360) * Math.PI / 180; // 角度转换为弧度
+    const rad = MathUtils.randomInt(0, 360) * Math.PI / 180; // 角度转换为弧度
     // 环圆心横坐标
     const ax = canvasRef.value.width / 2;
     // 环圆心纵坐标
     const ay = canvasRef.value.height / 2;
+    const { x, y } = MathUtils.computeCoordinates(ar, rad, { x: ax, y: ay });
     // 粒子本身横坐标
-    this.x = ax + ar * Math.cos(rad);
+    this.x = x;
     // 粒子本身纵坐标
-    this.y = ay + ar * Math.sin(rad);
+    this.y = y;
   }
 
   // 绘制粒子

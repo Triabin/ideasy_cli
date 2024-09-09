@@ -13,6 +13,7 @@
     "@vitejs/plugin-vue": "^5.0.5",
     "axios": "^1.7.2",
     "element-plus": "^2.7.7",
+    "ideasy_cli": "file:",
     "markdown-it": "^14.1.0",
     "markdown-it-code-copy": "^0.1.2",
     "markdown-it-highlightjs": "^4.1.0",

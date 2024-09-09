@@ -1,16 +1,19 @@
-/* 定义主题 */
-/* 暗色主题 */
-html[data-theme="dark"] {
-  --text-color: #FFF;
-  --bg1: #102128;
-  --bg2: #2D5567;
+/* 定义亮色主题（默认） */
+:root {
+  --content-bgc: #fff;
+  --box-bgc: #fff;
+  --box-shadow: 0.2vw 0.2vw 1vw rgba(0,0,0,0.2);
+  --boxHoverShadow: 0.5vw 0.5vw 1.1vw rgba(0,0,0,0.3);
+  --fontNormal: #000;
 }
 
-/* 亮色主题（默认） */
-:root {
-  --text-color: #333;
-  --bg1: #C7FFDD;
-  --bg2: #FBD988;
+/* 定义暗色主题 */
+.dark {
+  --content-bgc: #272727;
+  --box-bgc: #272727;
+  --box-shadow: 0.2vw 0.2vw 1vw rgba(0,0,0,0.2);
+  --boxHoverShadow: 0.5vw 0.5vw 1.1vw rgba(0,0,0,0.3);
+  --fontNormal: #fff;
 }
 
 #app {

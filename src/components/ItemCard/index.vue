@@ -2,7 +2,7 @@
 <template>
   <el-card class="card" @click="cardClick">
     <div class="title">
-      <Document v-if="props.pageAttr === 'article'" style="width: 1em; height: 1em; margin-right: 8px"/>
+      <Document v-if="props.pageAttr === 'blog'" style="width: 1em; height: 1em; margin-right: 8px"/>
       <Tools v-if="props.pageAttr === 'tool'" style="width: 1em; height: 1em; margin-right: 8px"/>
       <el-text type="primary" size="large" line-clamp="1">{{ props.title }}</el-text>
     </div>
@@ -22,19 +22,19 @@
         {{ props.labels[i - 1] }}
       </el-tag>
     </div>
-    <div style="text-align: left; padding: 5px 0 2px 0;" :title="props.abstract">
+    <div style="text-align: left; padding: 5px 0 2px 0;" :title="props.desc">
       <el-text type="info"
                line-clamp="4"
                style="white-space: pre-wrap; text-align: left;"
                truncated
                size="default"
       >
-        {{ props.abstract }}
+        {{ props.desc }}
       </el-text>
     </div>
     <div class="footer">
       <el-text size="small" style="float:left;">
-        {{ TimeUtils.convert(props.updateAt, TimeUtils.format1)?.format('yyyy-MM-dd') }}
+        {{ TimeUtils.convert(props.updatedAt, TimeUtils.format1)?.format('yyyy-MM-dd') }}
       </el-text>
     </div>
   </el-card>
@@ -59,10 +59,10 @@ const props = defineProps({
   pageAttr: {
     type: String,
     required: true,
-    validator: (value) => ['tool', 'article', 'game'].includes(value)
+    validator: (value) => ['tool', 'blog', 'game', 'note'].includes(value)
   },
 
-  abstract: {type: String},
+  desc: {type: String},
 
   // 路由名称
   routerName: {
@@ -78,7 +78,7 @@ const props = defineProps({
   labels: {type: Array},
 
   // 更新时间（yyyy-MM-dd HH:mm:ss）
-  updateAt: {type: String}
+  updatedAt: {type: String}
 });
 const router = useRouter();
 const cardClick = () => {
