@@ -9,5 +9,5 @@ import { ref } from "vue";
 import { ItemCardEle } from "@/common/classes.js";
 
 const currPath = ref('/programming/java');
-const cards = ItemCardEle.createByRoute(routes, currPath.value);
+const cards = ItemCardEle.createByRoute(routes, '/programming');
 </script>

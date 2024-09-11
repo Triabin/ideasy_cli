@@ -36,8 +36,10 @@ export class ItemCardEle {
     if (!routes || !routes.length) return [];
     let res = [];
     for (let route of routes) {
+      let currPath = parentPath.endsWith('/') ? parentPath + route.path : `${parentPath}/${route.path}`;
+      currPath = parentPath === '/' ? currPath.slice(1) : currPath;
       if (route.children) {
-        res.push(...this.createByRoute(route.children, route.path));
+        res.push(...this.createByRoute(route.children, currPath));
       } else {
         // 跳过一级路由
         if (route.path === '/' || /\/[a-zA-Z0-9_\-]+/.test(route.path)) {
@@ -49,7 +51,7 @@ export class ItemCardEle {
             route.meta.pageAttr,
             route.meta.desc,
             route.name,
-            parentPath.endsWith('/') ? parentPath + route.path : `${parentPath}/${route.path}`,
+            currPath,
             route.meta.labels,
             route.meta.createdAt,
             route.meta.updatedAt

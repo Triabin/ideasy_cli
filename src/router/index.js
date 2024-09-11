@@ -398,10 +398,16 @@ export const routes = [
 // 制定路由规则
 const router = createRouter({
   history: createWebHashHistory(), // 设置路由模式
-  routes: routes,
-  // 配置每次打开页面都在顶端
-  scrollBehavior() {
-    return { left: 0, top: 0 };
+  routes: routes
+});
+
+// 添加全局后置守卫
+router.afterEach((to, from) => {
+  // 确保 .el-main 元素存在
+  const mainElement = document.querySelector('.el-main');
+  if (mainElement) {
+    // 回到页面顶部
+    mainElement.scrollTop = 0;
   }
 });
 

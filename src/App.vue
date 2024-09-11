@@ -2,7 +2,7 @@
   <div class="common-layout">
     <el-container direction="vertical">
       <!-- 导航栏 -->
-      <el-header height="60px">
+      <el-header>
         <div class="layout-header">
           <div class="header-content">
             <div class="header-logo" @click="() => router.push('/home')">
@@ -61,7 +61,11 @@
         <div class="layout-main">
           <div class="main-content">
             <!-- 路由 -->
-            <router-view></router-view>
+            <router-view v-if="isRouterReady" v-slot="{ Component }">
+              <keep-alive>
+                <component :is="Component"/>
+              </keep-alive>
+            </router-view>
           </div>
         </div>
       </el-main>
@@ -71,18 +75,23 @@
 </template>
 
 <script setup>
-import { ref, onMounted, watch } from "vue";
+import { ref, onMounted, watch, onBeforeUnmount } from "vue";
 import Logo from '@/components/Logo';
 import { useRouter } from "vue-router";
 
 const router = useRouter();
-const activeIndex = ref()
+const activeIndex = ref('/home');
+const isRouterReady = ref(false);
 onMounted(() => {
+  isRouterReady.value = true;
   watch(() => router.currentRoute.value.fullPath, (newPath) => {
     let paths = newPath.split('/');
-    activeIndex.value = paths && paths.length > 0 ? `/${paths[0]}` : '/home';
+    activeIndex.value = paths && paths.length > 0 ? `/${paths[1]}` : '/home';
   });
-})
+});
+
+onBeforeUnmount(() => isRouterReady.value = false);
+
 const handleSelect = (key, keyPath) => {
   activeIndex.value = key;
 }
@@ -98,6 +107,10 @@ const handleSelect = (key, keyPath) => {
 }
 
 /* 2. 页眉最外层 */
+.el-header {
+  position: relative;
+}
+
 .layout-header {
   width: 100%;
   height: 100%;
@@ -143,6 +156,16 @@ const handleSelect = (key, keyPath) => {
 }
 
 /* 3. 页面主题部外层（便于居中） */
+.el-main {
+  position: absolute;
+  top: 60px;
+  bottom: 0;
+  overflow-y: scroll;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
 .layout-main {
   width: 100%;
   display: flex;

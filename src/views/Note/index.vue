@@ -10,5 +10,5 @@ import { ItemCardEle } from "@/common/classes.js";
 
 const currPath = ref('/note');
 const currRoutes = routes.filter(route => route.path === currPath.value);
-const cards = ItemCardEle.createByRoute(currRoutes, currPath.value);
+const cards = ItemCardEle.createByRoute(currRoutes);
 </script>
