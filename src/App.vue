@@ -86,7 +86,7 @@ onMounted(() => {
   isRouterReady.value = true;
   watch(() => router.currentRoute.value.fullPath, (newPath) => {
     let paths = newPath.split('/');
-    activeIndex.value = paths && paths.length > 0 ? `/${paths[1]}` : '/home';
+    activeIndex.value = paths && paths.length > 0 ? paths.slice(0, -1).join('/') : '/home';
   });
 });
 

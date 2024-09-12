@@ -1,6 +1,7 @@
 <!-- 仓颉语言学习首页 -->
 <template>
-  <card-page :full-path="currPath" :cards="cards"></card-page>
+<!--  <card-page :full-path="currPath" :cards="cards"></card-page>-->
+  华为还不让公开，敬请期待！
 </template>
 <script setup>
 import CardPage from "@/components/CardPage";

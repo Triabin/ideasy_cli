@@ -149,19 +149,7 @@ export const routes = [
           desc: '仓颉语言学习资料'
         },
         children: [
-          {
-            path: 'env-build',
-            name: 'EnvBuild',
-            component: () => import('@/views/Programming/Cangjie/EnvBuild/仓颉开发环境搭建.md'),
-            meta: {
-              title: '仓颉开发环境搭建',
-              desc: '简单介绍仓颉语言，搭建其开发环境，包括代码编辑器、环境变量配置等。',
-              labels: ['仓颉', '环境配置'],
-              createdAt: '2024-09-10 03:01:58',
-              updatedAt: undefined,
-              pageAttr: 'blog'
-            }
-          }
+
         ]
       }
     ]
