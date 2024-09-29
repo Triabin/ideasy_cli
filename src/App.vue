@@ -173,7 +173,7 @@ const handleSelect = (key, keyPath) => {
   align-items: center;
 }
 
-/* 3.1 页面主题部分 */
+/* 3.1 页面主体部分 */
 .layout-main .main-content {
   max-width: 1280px;
   width: 100%;

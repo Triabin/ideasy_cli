@@ -149,7 +149,19 @@ export const routes = [
           desc: '仓颉语言学习资料'
         },
         children: [
-
+          {
+            path: 'env-build',
+            name: 'EnvBuild',
+            component: () => import('@/views/Programming/Cangjie/EnvBuild/仓颉开发环境搭建.md'),
+            meta: {
+              title: '仓颉开发环境搭建',
+              desc: '简单介绍仓颉语言，搭建其开发环境，包括代码编辑器、环境变量配置等。',
+              labels: ['仓颉', '环境配置'],
+              createdAt: '2024-09-10 03:01:58',
+              updatedAt: undefined,
+              pageAttr: 'blog'
+            }
+          }
         ]
       }
     ]
@@ -163,6 +175,19 @@ export const routes = [
       desc: '平时看的一些视频/网页/文章/书籍或是其他任何值得记录的事情的笔记'
     },
     children: [
+      {
+        path: 'spring-detail',
+        name: 'SpringDetail',
+        component: () => import("@/views/Note/SpringDetail/Spring原理解析.md"),
+        meta: {
+          title: 'Spring原理解析',
+          desc: 'Spring框架的核心组件之一，IoC容器、AOP、MVC、数据访问、事务管理等内容的详细解析',
+          labels: ['Spring', 'Java'],
+          createdAt: '2024-09-14 18:53:29',
+          updatedAt: undefined,
+          pageAttr: 'note'
+        }
+      },
       {
         path: 'springboot-rabbitmq',
         name: 'SpringBoot2RabbitMQ',
@@ -290,7 +315,7 @@ export const routes = [
           desc: '常见经典的前端问题解决方案',
           labels: ['前端', 'JavaScript', 'vue', 'html', 'css', 'TypeScript'],
           createdAt: '2024-08-07 11:44:41',
-          updatedAt: '2024-08-30 13:59:30',
+          updatedAt: '2024-09-20 20:03:54',
           pageAttr: 'note'
         }
       },
